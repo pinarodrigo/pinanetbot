@@ -1,0 +1,20 @@
+{
+  "name": "pinanetbot",
+  "version": "1.0.0",
+  "description": "Telegram Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rodrigo.pina@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "got": "^11.8.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "superagent": "^6.1.0",
+    "telegraf": "^3.38.0",
+    "unirest": "^0.6.0"
+  }
+}
