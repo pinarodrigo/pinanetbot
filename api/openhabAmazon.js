@@ -41,7 +41,7 @@ function setItemCommand(itemName, command) {
       if (itemName === undefined)
         reject(Error('Passed itemName is undefined'));
 
-      if (state === undefined)
+      if (command === undefined)
         reject(Error('Passed state is undefined'));
 
       request({
@@ -56,7 +56,7 @@ function setItemCommand(itemName, command) {
           if (error) {
             reject(error);
           } else if (response.statusCode == 400) {
-            reject(Error(`Passed command not parseable: '${state}'`));
+            reject(Error(`Passed command not parseable: '${command}'`));
           } else if (response.statusCode == 404) {
             reject(Error(`Item not found ${itemName}`));
           }
@@ -71,5 +71,5 @@ function setItemCommand(itemName, command) {
 
 module.exports = {
   changeItemState: (itemName, commandName) => setItemState(itemName, commandName),
-  sendItemCommand: (itemName, command) => setItemState(itemName, command)
+  sendItemCommand: (itemName, command) => setItemCommand(itemName, command)
 };

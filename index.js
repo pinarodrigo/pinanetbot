@@ -34,7 +34,7 @@ const sendOpenHABCommand = new WizardScene(
                 "Enter the value"
             );
             return ctx.wizard.next();
-        } if (ctx.wizard.state.commandName === 'echo') {
+        } if (ctx.wizard.state.commandName === 'routine') {
             ctx.reply(
                 "Enter the value"
             );
@@ -75,7 +75,7 @@ const sendOpenHABCommand = new WizardScene(
                     console.error(JSON.stringify(err))
                 });
         }
-        if (commandName === 'echo') {
+        if (commandName === 'routine') {
             openhab
                 .sendItemCommand('Oficina_StartARoutine', commandValue)
                 .then(res => {
